@@ -3,16 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workout & Nutrition</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Workout Site</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="topnav">
-      <a href="/menu/workout.html">Workout</a>
-      <a href="/menu/nutrition.html">Nutrition</a>
-      <a href="/menu/health check.html">Health Check</a>
-    </div>
-    <h1>Welcome to Workout & Nutrition</h1>
-    <p>Your number 1 Guide to Workouts and Nutrition plans</p>
+    <header>
+      <div class="logo-container">
+        <img
+          src="images/logo.png"
+          alt="Workout Logo"
+          id="logo"
+        />
+      </div>
+      <button id="burger" class="burger" onclick="toggleMenu()">&#9776;</button>
+    </header>
+    <nav id="menu" class="menu">
+      <ul>
+        <li><a href="#workouts">Workouts</a></li>
+        <li><a href="#diets">Diets</a></li>
+        <li><a href="#bodytype">What's my body type?</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="slider">
+        <div class="slides">
+          <div class="slide" id="slide1">
+            <img
+              src="images/workout-slider.png"
+              alt="Workout"
+            />
+          </div>
+          <div class="slide" id="slide2">
+            <img
+              src="images/Diet-slider.png"
+              alt="Healthy Diet"
+            />
+          </div>
+          <div class="slide" id="slide3">
+            <img
+              src="images/bodytype-slider.png"
+              alt="Body Types"
+            />
+          </div>
+        </div>
+      </div>
+      <button class="slide-arrow prev-arrow" onclick="changeSlide(-1)">
+        &#10094;
+      </button>
+      <button class="slide-arrow next-arrow" onclick="changeSlide(1)">
+        &#10095;
+      </button>
+    </main>
+
+    <footer>
+      <div class="social-buttons">
+        <a href="https://www.facebook.com" target="_blank">
+          <button class="social-button" id="facebook-logo">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+        </a>
+        <a href="https://www.twitter.com" target="_blank">
+          <button class="social-button" id="twitter-logo">
+            <i class="fab fa-twitter"></i>
+          </button>
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <button class="social-button" id="instagram-logo">
+            <i class="fab fa-instagram"></i>
+          </button>
+        </a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
