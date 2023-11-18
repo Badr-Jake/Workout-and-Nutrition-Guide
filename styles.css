@@ -43,6 +43,11 @@ header {
  border: none;
  color: white;
  z-index: 1000;
+ transition: transform 0.3s ease;
+}
+
+.burger.active {
+  transform: rotate(90deg);
 }
 
 /* Menu styles */
@@ -170,3 +175,86 @@ footer {
 .next-arrow {
  right: 10px;
 }
+
+.category {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 75px;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .category:hover {
+      filter: brightness(120%);
+    }
+
+    .weight-loss {
+      background: linear-gradient(to bottom, #73eb9f 0%, #489665 100%);
+    }
+
+    .strength {
+      background: linear-gradient(to bottom, #ff9966 0%, #ff5e62 100%);
+    }
+
+    .hypertrophy {
+      background: linear-gradient(to bottom, #4b6cb7 0%, #182848 100%);
+    }
+
+    .category-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .explanation {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .weight-loss-explanation {
+      display: none;
+    }
+
+    .strength-explanation {
+      display: none;
+    }
+
+    .hypertrophy-explanation {
+      display: none;
+    }
+
+    .weight-loss:hover ~ .weight-loss-explanation {
+      display: block;
+    }
+
+    .strength:hover ~ .strength-explanation {
+      display: block;
+    }
+
+    .hypertrophy:hover ~ .hypertrophy-explanation {
+      display: block;
+    }
+
+    .explanation-text {
+      font-size: 18px;
+      font-weight: bold;
+      color: black;
+      text-align: center;
+    }
+
+    .explanation-list {
+      font-size: 16px;
+      color: black;
+      text-align: left;
+      margin-left: 20px;
+    }
