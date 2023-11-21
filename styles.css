@@ -19,9 +19,9 @@ header {
  position: relative;
  padding: 1em;
  background:rgb(10, 18, 30);
- color: #fff;
+ color: rgb(10, 18, 30);
  height: 70px;
- 
+ z-index: 1001;
 }
 
 .logo-container {
