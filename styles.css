@@ -83,6 +83,7 @@ header {
 /*main styles */
 main {
 flex:1 0 auto;
+width: 100%;
 }
 /* Footer styles */
 footer {
