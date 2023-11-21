@@ -2,7 +2,7 @@ function toggleMenu() {
   var menu = document.getElementById("menu");
   var burger = document.getElementById("burger");
 
-  if (menu.style.right === "-100%") {
+  if (menu.style.right === "-100%" || menu.style.right === "") {
     menu.style.right = "0";
     burger.innerHTML = "&#10006;";
     burger.classList.add("active"); // Add the "active" class
