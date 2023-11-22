@@ -16,7 +16,7 @@ header {
  display: flex;
  justify-content: center;
  align-items: center;
- position: relative;
+ position: fixed;
  padding: 1em;
  background:rgb(10, 18, 30);
  color: rgb(10, 18, 30);
