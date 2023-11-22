@@ -61,7 +61,7 @@ header {
  background: rgb(10, 18, 30);
  overflow-x: hidden;
  transition: 0.3s;
- z-index: 50;
+ z-index: 1002;
 }
 
 .menu ul {
