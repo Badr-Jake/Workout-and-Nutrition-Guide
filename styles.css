@@ -42,7 +42,7 @@ header {
  background: none;
  border: none;
  color: white;
- z-index: 1000;
+ z-index: 1003;
  transition: transform 0.3s ease;
 }
 
