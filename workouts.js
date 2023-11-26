@@ -1,34 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
   const categories = document.querySelectorAll('.category');
-  const infoContainer = document.getElementById('info-container');
+  const explanations = document.querySelectorAll('.explanation');
 
-  categories.forEach((category) => {
-    category.addEventListener('click', () => showInfo(category.id));
+  categories.forEach((category, index) => {
+    category.addEventListener('click', () => showExplanation(index));
   });
 
-  function showInfo(categoryId) {
-    // Clear existing content with fade-out effect
-    infoContainer.classList.add('fade-out');
-    setTimeout(() => {
-      infoContainer.innerHTML = getWorkoutInfo(categoryId);
-      infoContainer.classList.remove('fade-out');
-      infoContainer.classList.add('fade-in');
-    }, 500);
-  }
+  function showExplanation(index) {
+    // Hide all explanations
+    explanations.forEach((explanation) => {
+      explanation.style.display = 'none';
+    });
 
-  function getWorkoutInfo(categoryId) {
-    // Return the workout information based on the selected category
-    // You can customize this function to include the specific workout details
-    // for each category.
-    switch (categoryId) {
-      case 'weight-loss':
-        return `<p>Weight Loss Workout Info...</p>`;
-      case 'strength':
-        return `<p>Strength Workout Info...</p>`;
-      case 'hypertrophy':
-        return `<p>Hypertrophy Workout Info...</p>`;
-      default:
-        return '';
-    }
+    // Show the selected explanation
+    explanations[index].style.display = 'block';
   }
 });

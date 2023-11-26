@@ -177,6 +177,14 @@ footer {
  right: 10px;
 }
 
+.category-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .category {
       display: flex;
       flex-direction: column;
@@ -216,7 +224,8 @@ footer {
     }
 
     .explanation {
-      margin: 10px;
+      margin-left: 500px;
+      margin-right: 500px;
       padding: 10px;
       border-radius: 10px;
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
