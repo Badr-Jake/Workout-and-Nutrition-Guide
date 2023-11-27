@@ -43,6 +43,7 @@ setInterval(() => {
 
 // Javascript for the bodytype page.
 document.getElementById('bodyTypeForm').addEventListener('submit', function(event) {
+   console.log('Form submitted');
     event.preventDefault();
 
     var age = parseInt(document.getElementById('age').value);
