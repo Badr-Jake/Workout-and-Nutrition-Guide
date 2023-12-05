@@ -11,92 +11,94 @@
     <title>Body Type</title>
   </head>
   <body>
-    <div id="header"></div>
+    <div id="page-container">
+      <div id="header"></div>
 
-    <main>
-      <div class="container">
-        <h1>Find Your Body Type and Ideal Workout</h1>
-        <form id="bodyTypeForm">
-          <input type="number" id="age" placeholder="Age" required />
-          <input
-            type="number"
-            id="weight"
-            placeholder="Weight in kg"
-            required
-          />
-          <input
-            type="number"
-            id="height"
-            placeholder="Height in cm"
-            required
-          />
-          <button type="submit">Confirm</button>
-        </form>
-        <div id="result"></div>
-      </div>
-    </main>
-    <script src="script.js"></script>
-    <div id="footer"></div>
+      <main>
+        <div class="container">
+          <h1>Find Your Body Type and Ideal Workout</h1>
+          <form id="bodyTypeForm">
+            <input type="number" id="age" placeholder="Age" required />
+            <input
+              type="number"
+              id="weight"
+              placeholder="Weight in kg"
+              required
+            />
+            <input
+              type="number"
+              id="height"
+              placeholder="Height in cm"
+              required
+            />
+            <button type="submit">Confirm</button>
+          </form>
+          <div id="result"></div>
+        </div>
+      </main>
+      <script src="script.js"></script>
+      <div id="footer"></div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(function () {
-        $("#header").load("header.html");
-        $("#footer").load("footer.html");
-      });
-    </script>
-    <script>
-      document
-        .getElementById("bodyTypeForm")
-        .addEventListener("submit", function (event) {
-          console.log("Form submitted");
-          event.preventDefault();
-
-          var age = parseInt(document.getElementById("age").value);
-          var weight = parseFloat(document.getElementById("weight").value);
-          var height = parseFloat(document.getElementById("height").value);
-
-          var bmi = calculateBMI(weight, height);
-          var bodyType = determineBodyType(bmi, age);
-          var workoutSuggestion = suggestWorkout(bodyType);
-
-          displayResults(bmi, bodyType, workoutSuggestion);
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(function () {
+          $("#header").load("header.html");
+          $("#footer").load("footer.html");
         });
+      </script>
+      <script>
+        document
+          .getElementById("bodyTypeForm")
+          .addEventListener("submit", function (event) {
+            console.log("Form submitted");
+            event.preventDefault();
 
-      function calculateBMI(weight, height) {
-        return (weight / (height / 100) ** 2).toFixed(2);
-      }
+            var age = parseInt(document.getElementById("age").value);
+            var weight = parseFloat(document.getElementById("weight").value);
+            var height = parseFloat(document.getElementById("height").value);
 
-      function determineBodyType(bmi, age) {
-        if (bmi < 18.5) {
-          return "Ectomorph";
-        } else if (bmi >= 18.5 && bmi <= 24.9) {
-          return "Mesomorph";
-        } else {
-          return "Endomorph";
+            var bmi = calculateBMI(weight, height);
+            var bodyType = determineBodyType(bmi, age);
+            var workoutSuggestion = suggestWorkout(bodyType);
+
+            displayResults(bmi, bodyType, workoutSuggestion);
+          });
+
+        function calculateBMI(weight, height) {
+          return (weight / (height / 100) ** 2).toFixed(2);
         }
-      }
 
-      function suggestWorkout(bodyType) {
-        switch (bodyType) {
-          case "Ectomorph":
-            return "Strength and Hypertrophy";
-          case "Mesomorph":
-            return "Strength and Hypertrophy";
-          case "Endomorph":
-            return "Weight Loss and Strength";
-          default:
-            return "Custom";
+        function determineBodyType(bmi, age) {
+          if (bmi < 18.5) {
+            return "Ectomorph";
+          } else if (bmi >= 18.5 && bmi <= 24.9) {
+            return "Mesomorph";
+          } else {
+            return "Endomorph";
+          }
         }
-      }
 
-      function displayResults(bmi, bodyType, workoutSuggestion) {
-        var resultDiv = document.getElementById("result");
-        resultDiv.innerHTML = `<p>Your BMI is: ${bmi}</p>
+        function suggestWorkout(bodyType) {
+          switch (bodyType) {
+            case "Ectomorph":
+              return "Strength and Hypertrophy";
+            case "Mesomorph":
+              return "Strength and Hypertrophy";
+            case "Endomorph":
+              return "Weight Loss and Strength";
+            default:
+              return "Custom";
+          }
+        }
+
+        function displayResults(bmi, bodyType, workoutSuggestion) {
+          var resultDiv = document.getElementById("result");
+          resultDiv.innerHTML = `<p>Your BMI is: ${bmi}</p>
                            <p>Your body type is: ${bodyType}</p>
                            <p>Suggested Workout: ${workoutSuggestion}</p>`;
-        resultDiv.style.display = "block";
-      }
-    </script>
+          resultDiv.style.display = "block";
+        }
+      </script>
+    </div>
   </body>
 </html>
