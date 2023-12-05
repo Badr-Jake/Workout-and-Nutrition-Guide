@@ -174,10 +174,12 @@ footer {
 
 .prev-arrow {
  left: 10px;
+ width: 35px;
 }
 
 .next-arrow {
  right: 10px;
+width: 35px;
 }
 
 .category-container {
