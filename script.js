@@ -74,3 +74,42 @@ function login() {
 document.addEventListener('DOMContentLoaded', function() {
   // Add your event listeners here
 });
+
+
+
+
+
+
+
+
+$(document).ready(function () {
+  // Set the initial visibility of all exercise lines to hidden
+  $('.exercise').hide();
+
+  // Function to check if an element is in the viewport
+  function isElementInViewport(el) {
+    var rect = el[0].getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+  }
+
+  // Function to handle scroll events
+  function handleScroll() {
+    // Loop through each exercise element
+    $('.exercise').each(function () {
+      // Check if the exercise element is in the viewport
+      if (isElementInViewport($(this))) {
+        // If it's in the viewport, show the element (you can add animation effects here)
+        $(this).show();
+      }
+    });
+  }
+
+  // Attach the handleScroll function to the scroll event
+  $(window).on('scroll', handleScroll);
+
+  // Trigger the handleScroll function on page load
+  handleScroll();
+});

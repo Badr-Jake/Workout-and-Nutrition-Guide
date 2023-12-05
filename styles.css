@@ -254,35 +254,11 @@ width: 35px;
 }
 
 .explanation {
-  width: 100%;
+  padding-top: 200px;
   padding-left: 200px;
   border-radius: 10px;
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.weight-loss-explanation {
-  display: none;
-}
-
-.strength-explanation {
-  display: none;
-}
-
-.hypertrophy-explanation {
-  display: none;
-}
-
-.weight-loss:hover ~ .weight-loss-explanation {
-  display: block;
-}
-
-.strength:hover ~ .strength-explanation {
-  display: block;
-}
-
-.hypertrophy:hover ~ .hypertrophy-explanation {
-  display: block;
 }
 
 .explanation-text {
@@ -299,129 +275,143 @@ width: 35px;
   margin-left: 20px;
 }
 
-    /* Styles for the bodytype page */
-        .container {
-          width: 80%;
-          margin: 0 auto;
-          padding: 20px;
-        }
+/* Styles for the bodytype page */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+input,
+button {
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: none;
+}
+
+.intro {
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 16px;
+}
+
+.text-container {
+  margin: auto;
+  
+    max-width: 750px;
     
-        input,
-        button {
-          margin: 10px;
-          padding: 10px;
-          width: 200px;
-        }
+    padding: 20px;
+    text-align: justify;
     
-        #result {
-          margin-top: 20px;
-          padding: 10px;
-          border: 1px solid #ddd;
-          display: none;
-        }
+}
 
-        .intro {
-margin-left: 100px;
-margin-right: 100px;
-text-align: center;
-        }
+/* Modal styles */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1004;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
 
-        .intro h1 {
-          font-size: 24px;
-          font-weight: bold;
-          margin-bottom: 10px;
-        }
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
+}
 
-        .intro p {
-          font-size: 16px;
-        }
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
 
-        .text-container {
-          margin: auto;
-          
-            max-width: 750px;
-            
-            padding: 20px;
-            text-align: justify;
-            
-        }
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-                /* Modal styles */
-                .modal {
-                  display: none;
-                  /* Hidden by default */
-                  position: fixed;
-                  /* Stay in place */
-                  z-index: 1004;
-                  /* Sit on top */
-                  left: 0;
-                  top: 0;
-                  width: 100%;
-                  /* Full width */
-                  height: 100%;
-                  /* Full height */
-                  overflow: auto;
-                  /* Enable scroll if needed */
-                  background-color: rgb(0, 0, 0);
-                  /* Fallback color */
-                  background-color: rgba(0, 0, 0, 0.4);
-                  /* Black w/ opacity */
-                }
-        
-                .modal-content {
-                  background-color: #fefefe;
-                  margin: 15% auto;
-                  /* 15% from the top and centered */
-                  padding: 20px;
-                  border: 1px solid #888;
-                  width: 80%;
-                  /* Could be more or less, depending on screen size */
-                }
-        
-                .close {
-                  color: #aaa;
-                  float: right;
-                  font-size: 28px;
-                  font-weight: bold;
-                }
-        
-                .close:hover,
-                .close:focus {
-                  color: black;
-                  text-decoration: none;
-                  cursor: pointer;
-                }
-        
-                /* Button styles */
-                #auth-buttons button {
-                  background-color: #555c63;
-                  width: 100px;
-                  color: white;
-                  padding: 10px 20px;
-                  margin: 10px;
-                  border: none;
-                  cursor: pointer;
-                  border-radius: 4px;
-                  transition: background-color 0.3s;
-                }
-        
-                #auth-buttons button:hover {
-                  background-color: #b34800;
-                  /* Darker blue */
-                }
-        
-                /* Welcome message styles */
-                #welcome-message {
-                  color: white;
-                  margin-left: 10px;
-                  /* Adjust as per layout */
-                }
+/* Button styles */
+#auth-buttons button {
+  background-color: #555c63;
+  width: 100px;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
 
-                                #auth-buttons {
-                                  display: flex;
-                                  justify-content: center;
-                                  align-items: center;
-                                  /* Add some margin if needed */
-                                  margin-right: auto;
-                                  /* This pushes the logo and burger to the right */
-                                }
+#auth-buttons button:hover {
+  background-color: #b34800;
+  /* Darker blue */
+}
+
+/* Welcome message styles */
+#welcome-message {
+  color: white;
+  margin-left: 10px;
+  /* Adjust as per layout */
+}
+
+#auth-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Add some margin if needed */
+  margin-right: auto;
+  /* This pushes the logo and burger to the right */
+}
+
+/* Remove underline from all anchor tags */
+a {
+  text-decoration: none;
+}
+
+/* Optionally, you can add styles for hover and visited states */
+a:hover {
+  text-decoration: none; /* Remove underline on hover */
+}
+
+a:visited {
+  text-decoration: none; /* Remove underline on visited links */
+}
