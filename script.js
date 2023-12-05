@@ -39,3 +39,38 @@ setInterval(() => {
   changeSlide(1);
 }, 2000);
 
+// Function to open the login form modal
+function openLoginForm() {
+  document.getElementById('login-form').style.display = 'block';
+}
+
+// Function to open the sign up form modal
+function openSignUpForm() {
+  document.getElementById('signup-form').style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+  document.getElementById('login-form').style.display = 'none';
+  document.getElementById('signup-form').style.display = 'none';
+}
+
+// Function to display the welcome message and hide auth buttons
+function displayWelcomeMessage(username) {
+  document.getElementById('auth-buttons').style.display = 'none';
+  document.getElementById('welcome-message').style.display = 'block';
+  document.getElementById('user-name').textContent = username;
+}
+
+// Dummy function to simulate a successful login
+// In a real application, you would replace this with a function that validates the user's credentials
+function login() {
+  // Simulate a login with a static username
+  displayWelcomeMessage('User');
+  closeModal();
+}
+
+// Add event listeners for login and sign up functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Add your event listeners here
+});
