@@ -96,8 +96,7 @@ footer {
  align-items: center;
  height: 100px;
  background: rgb(10, 18, 30);
-  position: absolute;
-  
+  position: absolute !important; 
     width: 100%;
  
 }
