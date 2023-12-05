@@ -1,12 +1,12 @@
 /* General styles */
 body,
 html {
- height: 100%;
- display: flex;
- flex-direction: column;
- margin: 0;
- padding: 0;
- font-family: Arial, sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
  
 }
 
@@ -93,7 +93,7 @@ footer {
  align-items: center;
  height: 100px;
  background: rgb(10, 18, 30);
-  position: absolute;
+  position: fixed;
     bottom: 0;
     width: 100%;
  
@@ -121,7 +121,7 @@ footer {
  color: #fff;
  background: #444;
  cursor: pointer;
- transition: background 0.3s;
+ transition: 0.3s;
 }
 
 .social-button:hover {
@@ -202,93 +202,116 @@ footer {
       transition: all 0.3s ease-in-out;
     }
 
-    .category:hover {
-      filter: brightness(120%);
-    }
+.category:hover {
+  filter: brightness(120%);
+}
 
-    .weight-loss {
-      background: linear-gradient(to bottom, #73eb9f 0%, #489665 100%);
-    }
+.day {
+  font-size: 120px;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 120px;
+}
 
-    .strength {
-      background: linear-gradient(to bottom, #ff9966 0%, #ff5e62 100%);
-    }
+.day-detail {
+  font-size: 100px;
+  margin-bottom: 400px;
+}
 
-    .hypertrophy {
-      background: linear-gradient(to bottom, #4b6cb7 0%, #182848 100%);
-    }
+.day-heading {
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-    .category-text {
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-      text-align: center;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+.exercise {
+  font-size: 40px;
+  margin-bottom: 100px;
+}
 
-    .explanation {
-      margin-left: 500px;
-      margin-right: 500px;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    }
+.weight-loss {
+  background: linear-gradient(to bottom, #73eb9f 0%, #489665 100%);
+}
 
-    .weight-loss-explanation {
-      display: none;
-    }
+.strength {
+  background: linear-gradient(to bottom, #ff9966 0%, #ff5e62 100%);
+}
 
-    .strength-explanation {
-      display: none;
-    }
+.hypertrophy {
+  background: linear-gradient(to bottom, #4b6cb7 0%, #182848 100%);
+}
 
-    .hypertrophy-explanation {
-      display: none;
-    }
+.category-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-    .weight-loss:hover ~ .weight-loss-explanation {
-      display: block;
-    }
+.explanation {
+  width: 100%;
+  padding-left: 200px;
+  border-radius: 10px;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
-    .strength:hover ~ .strength-explanation {
-      display: block;
-    }
+.weight-loss-explanation {
+  display: none;
+}
 
-    .hypertrophy:hover ~ .hypertrophy-explanation {
-      display: block;
-    }
+.strength-explanation {
+  display: none;
+}
 
-    .explanation-text {
-      font-size: 18px;
-      font-weight: bold;
-      color: black;
-      text-align: center;
-    }
+.hypertrophy-explanation {
+  display: none;
+}
 
-    .explanation-list {
-      font-size: 16px;
-      color: black;
-      text-align: left;
-      margin-left: 20px;
-    }
+.weight-loss:hover ~ .weight-loss-explanation {
+  display: block;
+}
 
-    /* Styles for the bodytype page */
-        .container {
-          width: 80%;
-          margin: 0 auto;
-          padding: 20px;
-        }
-    
-        input,
-        button {
-          margin: 10px;
-          padding: 10px;
-          width: 200px;
-        }
-    
-        #result {
-          margin-top: 20px;
-          padding: 10px;
-          border: 1px solid #ddd;
-          display: none;
-        }
+.strength:hover ~ .strength-explanation {
+  display: block;
+}
+
+.hypertrophy:hover ~ .hypertrophy-explanation {
+  display: block;
+}
+
+.explanation-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.explanation-list {
+  font-size: 16px;
+  color: black;
+  text-align: left;
+  margin-left: 20px;
+}
+
+/* Styles for the bodytype page */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+input,
+button {
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: none;
+}
