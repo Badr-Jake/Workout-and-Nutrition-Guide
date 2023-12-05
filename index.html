@@ -12,60 +12,63 @@
   </head>
   <body>
     <script src="script.js"></script>
-    <div id="header"></div>
+    <div id="page-container">
+      <div id="header"></div>
 
-    <main>
-      <div class="slider">
-        <div class="slides">
-          <div class="slide" id="slide1">
-            <img src="images/workout-slider.png" alt="Workout" />
-          </div>
-          <div class="slide" id="slide2">
-            <img src="images/Diet-slider.png" alt="Healthy Diet" />
-          </div>
-          <div class="slide" id="slide3">
-            <img src="images/bodytype-slider.png" alt="Body Types" />
+      <main>
+        <div class="slider">
+          <div class="slides">
+            <div class="slide" id="slide1">
+              <img src="images/workout-slider.png" alt="Workout" />
+            </div>
+            <div class="slide" id="slide2">
+              <img src="images/Diet-slider.png" alt="Healthy Diet" />
+            </div>
+            <div class="slide" id="slide3">
+              <img src="images/bodytype-slider.png" alt="Body Types" />
+            </div>
           </div>
         </div>
-      </div>
-      <button class="slide-arrow prev-arrow" onclick="changeSlide(-1)">
-        &#10094;
-      </button>
-      <button class="slide-arrow next-arrow" onclick="changeSlide(1)">
-        &#10095;
-      </button>
-      <div class="intro">
-        <h1>Welcome to your Personal Guide to Fitness and Nutrition</h1>
-        <p>
-          Embark on a journey of self-discovery and wellness, where
-          understanding your body type is the key to a healthier you. Our
-          platform is designed to help you uncover the mysteries of your unique
-          physique and guide you towards the most effective workout routines and
-          diet plans tailored specifically for you. Why guess when you can know?
-          Our comprehensive analysis dives deep into the nuances of different
-          body types, ensuring that every recommendation we make is perfectly
-          aligned with your individual needs. Whether you're looking to build
-          muscle, lose weight, or simply maintain a balanced lifestyle, we've
-          got you covered. Our team of experts understands that there is no
-          one-size-fits-all approach to fitness and nutrition. That's why we
-          provide personalized advice, backed by scientific research and
-          real-world experience, to help you achieve your goals in a way that
-          feels right for you. Join us in this transformative experience where
-          every step you take is a step towards a better, healthier version of
-          yourself. Welcome to this guide – where your body type is the
-          blueprint to your wellness success!
-        </p>
-      </div>
-    </main>
+        <button class="slide-arrow prev-arrow" onclick="changeSlide(-1)">
+          &#10094;
+        </button>
+        <button class="slide-arrow next-arrow" onclick="changeSlide(1)">
+          &#10095;
+        </button>
+        <div class="intro">
+          <h1>Welcome to your Personal Guide to Fitness and Nutrition</h1>
+          <p>
+            Embark on a journey of self-discovery and wellness, where
+            understanding your body type is the key to a healthier you. Our
+            platform is designed to help you uncover the mysteries of your
+            unique physique and guide you towards the most effective workout
+            routines and diet plans tailored specifically for you. Why guess
+            when you can know? Our comprehensive analysis dives deep into the
+            nuances of different body types, ensuring that every recommendation
+            we make is perfectly aligned with your individual needs. Whether
+            you're looking to build muscle, lose weight, or simply maintain a
+            balanced lifestyle, we've got you covered. Our team of experts
+            understands that there is no one-size-fits-all approach to fitness
+            and nutrition. That's why we provide personalized advice, backed by
+            scientific research and real-world experience, to help you achieve
+            your goals in a way that feels right for you. Join us in this
+            transformative experience where every step you take is a step
+            towards a better, healthier version of yourself. Welcome to this
+            guide – where your body type is the blueprint to your wellness
+            success!
+          </p>
+        </div>
+      </main>
 
-    <div id="footer"></div>
+      <div id="footer"></div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(function () {
-        $("#header").load("header.html");
-        $("#footer").load("footer.html");
-      });
-    </script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(function () {
+          $("#header").load("header.html");
+          $("#footer").load("footer.html");
+        });
+      </script>
+    </div>
   </body>
 </html>
