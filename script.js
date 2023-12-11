@@ -74,3 +74,75 @@ function login() {
 document.addEventListener('DOMContentLoaded', function() {
   // Add your event listeners here
 });
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyArMof7FsZeSc5apBepTwaDEJX64m42LIk",
+  authDomain: "workout-nutriton-guide.firebaseapp.com",
+  databaseURL: "https://workout-nutriton-guide-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "workout-nutriton-guide",
+  storageBucket: "workout-nutriton-guide.appspot.com",
+  messagingSenderId: "552847584062",
+  appId: "1:552847584062:web:43820a7a059d0d0b4ada6f",
+  measurementId: "G-RBN55J2DEJ"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+
+
+const auth = firebase.auth();
+const database = firebase.database();
+
+// Sign up function
+function signUp() {
+  const email = document.getElementById('signup-email').value;
+  const password = document.getElementById('signup-password').value;
+  
+  auth.createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      // You can save additional user info to the database here
+      database.ref('users/' + user.uid).set({
+        email: email
+        // other profile information
+      });
+      // redirect to home page or somewhere else
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // .. handle errors here
+      console.error(errorCode, errorMessage);
+    });
+}
+
+// Login function
+function login() {
+  const email = document.getElementById('login-username').value;
+  const password = document.getElementById('login-password').value;
+  
+  auth.signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // redirect or do something else
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // .. handle errors here
+      console.error(errorCode, errorMessage);
+    });
+}
