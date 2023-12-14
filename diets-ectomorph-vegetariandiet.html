@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetarian Diet</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    
+    <style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="scroll-message">Scroll Down</div>
+
+    <div class="explanation hypertrophy-explanation">
+        <div class="day fade-in-section">Vegetarian Diet</div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="exercise">A diverse and nutrient-rich diet that includes plant-based foods and dairy or eggs, offering the high-calorie intake necessary for ectomorphs who may struggle to gain weight.</div>
+            <img src="https://images.theconversation.com/files/352720/original/file-20200813-22-u6p0qo.jpg?ixlib=rb-1.1.0&rect=0%2C0%2C6576%2C4288&q=45&auto=format&w=926&fit=clip" width="800px">
+        </div>
+  
+        <div class="day fade-in-section">Example</div>
+        
+        <div class="day-detail fade-in-section">
+            <div class="exercise">
+                <li>Lentil and vegetable curry served with rice</li>
+                <li>Whole-grain pasta with a creamy mushroom sauce</li>
+                <li>Quinoa bowl with mixed beans, avocado, and cheese</li>
+            </div>
+            <div class="example-images">
+                <img src="https://www.nourishandtempt.com/wp-content/uploads/2019/10/87688565_565324367524118_6303247020962349056_n.jpg" height="400px">
+                <img src="https://familystylefood.com/wp-content/uploads/2020/02/mushroom-linguine-close.jpg" height="400px">
+                <img src="https://therealfooddietitians.com/wp-content/uploads/2022/05/Tex-Mex-Quinoa-Salad-3.jpg" height="400px">
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+
+        // Trigger animation on scroll
+        $(window).on('scroll', function() {
+            $('.fade-in-section').each(function() {
+                var sectionTop = $(this).offset().top;
+                var scrollPos = $(window).scrollTop();
+                var windowHeight = $(window).height();
+
+                if (scrollPos + windowHeight > sectionTop) {
+                    $(this).addClass('visible');
+                }
+            });
+        });
+      });
+    </script>
+</body>
+</html>

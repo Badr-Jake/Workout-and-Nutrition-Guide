@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediterranean Diet</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    
+    <style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="scroll-message">Scroll Down</div>
+
+    <div class="explanation hypertrophy-explanation">
+        <div class="day fade-in-section">Mediterranean Diet</div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="exercise">A balanced diet rich in fruits, vegetables, whole grains, lean proteins, and healthy fats, particularly olive oil. Ideal for mesomorphs who are typically athletic and can benefit from a diet that supports muscle maintenance and energy levels.</div>
+            <img src="https://www.houseofwellness.com.au/wp-content/uploads/2022/02/nordic-diet.jpg" width="800px">
+        </div>
+  
+        <div class="day fade-in-section">Example</div>
+        
+        <div class="day-detail fade-in-section">
+            <div class="exercise">
+                <li>Grilled fish with a salad dressed in olive oil</li>
+                <li>Whole grain pasta with a tomato and vegetable sauce</li>
+                <li>Side of mixed greens.</li>
+            </div>
+            <div class="example-images">
+                <img src="https://www.jessicagavin.com/wp-content/uploads/2016/05/protein-packed-salmon-salad-recipe.jpg" height="400px">
+                <img src="https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2021/10/roasted-tomato-sauce-portion-1024x1536.jpg" height="400px">
+                <img src="https://www.lecremedelacrumb.com/wp-content/uploads/2019/01/best-simple-green-salad-3.jpg" height="400px">
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+
+        // Trigger animation on scroll
+        $(window).on('scroll', function() {
+            $('.fade-in-section').each(function() {
+                var sectionTop = $(this).offset().top;
+                var scrollPos = $(window).scrollTop();
+                var windowHeight = $(window).height();
+
+                if (scrollPos + windowHeight > sectionTop) {
+                    $(this).addClass('visible');
+                }
+            });
+        });
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diets-Mesomorph</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+</head>
+<body>
+    <script src="script.js"></script>
+    <div id="header"></div>
+    
+    <div class="category-container">
+        <a href="diets-mesomorph-mediterraneandiet.html">
+          <div class="category weight-loss">
+            <div class="category-text">Mediterranean Diet</div>
+          </div>
+        </a>
+        <a href="diets-mesomorph-paleodiet.html">
+          <div class="category hypertrophy">
+            <div class="category-text">Paleo diet</div>
+          </div>
+        </a>
+    </div>
+    <!-- Similar structure for other categories -->
+    
+
+    <div id="footer"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(function () {
+          $("#header").load("header.html");
+          $("#footer").load("footer.html");
+        });
+      </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paleo Diet</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    
+    <style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="scroll-message">Scroll Down</div>
+
+    <div class="explanation hypertrophy-explanation">
+        <div class="day fade-in-section">Paleo Diet</div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="exercise">Focuses on whole foods that would have been available to Paleolithic humans, such as lean meats, fish, fruits, vegetables, nuts, and seeds. Its nutrient density is ideal for mesomorphs who need to maintain lean muscle mass.</div>
+            <img src="https://images.everydayhealth.com/images/diet-nutrition/paleo-diet/can-a-paleo-diet-treat-uc-1440x810.jpg?sfvrsn=aa69fdba_1" width="800px">
+        </div>
+  
+        <div class="day fade-in-section">Example</div>
+        
+        <div class="day-detail fade-in-section">
+            <div class="exercise">
+                <li>Chicken salad with nuts and fruits</li>
+                <li>Beef stir-fry with a variety of vegetables</li>
+                <li>Baked salmon with asparagus</li>
+            </div>
+            <div class="example-images">
+                <img src="https://worldlytreat.com/wp-content/uploads/2022/06/Chicken-Fruit-salad--683x1024.jpg" height="400px">
+                <img src="https://playswellwithbutter.com/wp-content/uploads/2022/02/Beef-and-Vegetable-Stir-Fry-16.jpg" height="400px">
+                <img src="https://natashaskitchen.com/wp-content/uploads/2017/06/Salmon-and-Asparagus-3.jpg" height="400px">
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+
+        // Trigger animation on scroll
+        $(window).on('scroll', function() {
+            $('.fade-in-section').each(function() {
+                var sectionTop = $(this).offset().top;
+                var scrollPos = $(window).scrollTop();
+                var windowHeight = $(window).height();
+
+                if (scrollPos + windowHeight > sectionTop) {
+                    $(this).addClass('visible');
+                }
+            });
+        });
+      });
+    </script>
+</body>
+</html>

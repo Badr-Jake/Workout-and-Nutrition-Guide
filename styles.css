@@ -263,6 +263,7 @@ width: 35px;
 .explanation {
   padding-top: 200px;
   padding-left: 200px;
+  padding-right: 200px;
   border-radius: 10px;
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -280,6 +281,10 @@ width: 35px;
   color: black;
   text-align: left;
   margin-left: 20px;
+}
+
+.example-images {
+  white-space: nowrap;
 }
 
 /* Styles for the bodytype page */

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ketogenic Diet</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    
+    <style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="scroll-message">Scroll Down</div>
+
+    <div class="explanation hypertrophy-explanation">
+        <div class="day fade-in-section">Ketogenic Diet</div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="exercise">A high-fat, adequate-protein, low-carbohydrate diet that aims to burn fat for fuel, making it fitting for endomorphs looking to lose weight or manage insulin sensitivity.</div>
+            <img src="https://www.epilepsy.org.uk/app/uploads/2022/08/epilepsy-about-treatment-diet-ketogenic-cropped-e1661170664608.jpg" width="800px">
+        </div>
+  
+        <div class="day fade-in-section">Example</div>
+        
+        <div class="day-detail fade-in-section">
+            <div class="exercise">
+                <li>Egg and avocado salad</li>
+                <li>Beef steak with cauliflower mash</li>
+                <li>Zucchini noodles with creamy Alfredo sauce</li>
+            </div>
+            <div class="example-images">
+                <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2018/08/Avocado-Egg-Salad-2.jpg" height="400px">
+                <img src="https://media.blueapron.com/recipes/24369/square_newsletter_images/1591041601-2622-0024-8621/0120_FPM_Steak_41269_SQ_Web.jpg?quality=80&width=850&format=pjpg" height="400px">
+                <img src="https://4.bp.blogspot.com/-q8XXFuDQUoY/V20zDxvm4fI/AAAAAAAADqg/2LtGfZ-pSqM7gzgyem3lWO7Uc5tNjidyQCLcB/s1600/%2528Vegan%2529-Creamy-Garlic-Alfredo-Sauce-Zoodles.jpg" height="400px">
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+
+        // Trigger animation on scroll
+        $(window).on('scroll', function() {
+            $('.fade-in-section').each(function() {
+                var sectionTop = $(this).offset().top;
+                var scrollPos = $(window).scrollTop();
+                var windowHeight = $(window).height();
+
+                if (scrollPos + windowHeight > sectionTop) {
+                    $(this).addClass('visible');
+                }
+            });
+        });
+      });
+    </script>
+</body>
+</html>
