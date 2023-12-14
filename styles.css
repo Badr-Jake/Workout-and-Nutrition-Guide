@@ -210,6 +210,13 @@ width: 35px;
   filter: brightness(120%);
 }
 
+.scroll-message {
+  font-size: 30px;
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
+}
+
 .day {
   font-size: 120px;
   font-weight: bold;
