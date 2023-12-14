@@ -1,12 +1,12 @@
 /* General styles */
 body,
 html {
- height: 100%;
- display: flex;
- flex-direction: column;
- margin: 0;
- padding: 0;
- font-family: Arial, sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
  padding-bottom: 100px;
 }
 
@@ -123,7 +123,7 @@ justify-content: center;
  color: #fff;
  background: #444;
  cursor: pointer;
- transition: background 0.3s;
+ transition: 0.3s;
 }
 
 .social-button:hover {
@@ -206,276 +206,310 @@ width: 35px;
       transition: all 0.3s ease-in-out;
     }
 
-    .category:hover {
-      filter: brightness(120%);
-    }
+.category:hover {
+  filter: brightness(120%);
+}
 
-    .weight-loss {
-      background: linear-gradient(to bottom, #73eb9f 0%, #489665 100%);
-    }
+.scroll-message {
+  font-size: 30px;
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
+}
 
-    .strength {
-      background: linear-gradient(to bottom, #ff9966 0%, #ff5e62 100%);
-    }
+.day {
+  font-size: 120px;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
 
-    .hypertrophy {
-      background: linear-gradient(to bottom, #4b6cb7 0%, #182848 100%);
-    }
+.day-detail {
+  font-size: 100px;
+  margin-bottom: 400px;
+}
 
-    .category-text {
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-      text-align: center;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+.day-heading {
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-    .explanation {
-      margin-left: 500px;
-      margin-right: 500px;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    }
+.exercise {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
 
-    .weight-loss-explanation {
-      display: none;
-    }
+.weight-loss {
+  background: linear-gradient(to bottom, #73eb9f 0%, #489665 100%);
+}
 
-    .strength-explanation {
-      display: none;
-    }
+.strength {
+  background: linear-gradient(to bottom, #ff9966 0%, #ff5e62 100%);
+}
 
-    .hypertrophy-explanation {
-      display: none;
-    }
+.hypertrophy {
+  background: linear-gradient(to bottom, #4b6cb7 0%, #182848 100%);
+}
 
-    .weight-loss:hover ~ .weight-loss-explanation {
-      display: block;
-    }
+.category-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-    .strength:hover ~ .strength-explanation {
-      display: block;
-    }
+.explanation {
+  padding-top: 200px;
+  padding-left: 200px;
+  padding-right: 200px;
+  border-radius: 10px;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
-    .hypertrophy:hover ~ .hypertrophy-explanation {
-      display: block;
-    }
+.explanation-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
 
-    .explanation-text {
-      font-size: 18px;
-      font-weight: bold;
-      color: black;
-      text-align: center;
-    }
+.explanation-list {
+  font-size: 16px;
+  color: black;
+  text-align: left;
+  margin-left: 20px;
+}
 
-    .explanation-list {
-      font-size: 16px;
-      color: black;
-      text-align: left;
-      margin-left: 20px;
-    }
+.example-images {
+  white-space: nowrap;
+}
 
-    /* Styles for the bodytype page */
-        .container {
-          width: 80%;
-          margin: 0 auto;
-          padding: 20px;
-        }
+/* Styles for the bodytype page */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+input,
+button {
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: none;
+}
+
+.intro {
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 16px;
+}
+
+.text-container {
+  margin: auto;
+  
+    max-width: 750px;
     
-        input,
-        button {
-          margin: 10px;
-          padding: 10px;
-          width: 200px;
-        }
+    padding: 20px;
+    text-align: justify;
     
-        #result {
-          margin-top: 20px;
-          padding: 10px;
-          border: 1px solid #ddd;
-          display: none;
-        }
+}
 
-        .intro {
-margin-left: 100px;
-margin-right: 100px;
-text-align: center;
-        }
+/* Modal styles */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1004;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
 
-        .intro h1 {
-          font-size: 24px;
-          font-weight: bold;
-          margin-bottom: 10px;
-        }
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
+}
 
-        .intro p {
-          font-size: 16px;
-        }
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
 
-        .text-container {
-          margin: auto;
-          
-            max-width: 750px;
-            
-            padding: 20px;
-            text-align: justify;
-            
-        }
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-                /* Modal styles */
-                .modal {
-                  display: none;
-                  /* Hidden by default */
-                  position: fixed;
-                  /* Stay in place */
-                  z-index: 1004;
-                  /* Sit on top */
-                  left: 0;
-                  top: 0;
-                  width: 100%;
-                  /* Full width */
-                  height: 100%;
-                  /* Full height */
-                  overflow: auto;
-                  /* Enable scroll if needed */
-                  background-color: rgb(0, 0, 0);
-                  /* Fallback color */
-                  background-color: rgba(0, 0, 0, 0.4);
-                  /* Black w/ opacity */
-                }
-        
-                .modal-content {
-                  background-color: #fefefe;
-                  margin: 15% auto;
-                  /* 15% from the top and centered */
-                  padding: 20px;
-                  border: 1px solid #888;
-                  width: 80%;
-                  /* Could be more or less, depending on screen size */
-                }
-        
-                .close {
-                  color: #aaa;
-                  float: right;
-                  font-size: 28px;
-                  font-weight: bold;
-                }
-        
-                .close:hover,
-                .close:focus {
-                  color: black;
-                  text-decoration: none;
-                  cursor: pointer;
-                }
-        
-                /* Button styles */
-                #auth-buttons button {
-                  background-color: #555c63;
-                  width: 100px;
-                  color: white;
-                  padding: 10px 20px;
-                  margin: 10px;
-                  border: none;
-                  cursor: pointer;
-                  border-radius: 4px;
-                  transition: background-color 0.3s;
-                }
-        
-                #auth-buttons button:hover {
-                  background-color: #b34800;
-                  /* Darker blue */
-                }
-        
-                /* Welcome message styles */
-                #welcome-message {
-                  color: white;
-                  margin-left: 10px;
-                  /* Adjust as per layout */
-                }
+/* Button styles */
+#auth-buttons button {
+  background-color: #555c63;
+  width: 100px;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
 
-                #auth-buttons {
-                                  display: flex;
-                                  justify-content: center;
-                                  align-items: center;
-                                  /* Add some margin if needed */
-                                  margin-right: auto;
-                                  font-weight: bolder;
-                                  /* This pushes the logo and burger to the right */
-                                }
-                                #auth-buttons a {
-                                  text-decoration: none;
-                                  /* Removes the underline from links */
-                                  color: inherit;
-                                  /* Makes the link color the same as the button text color */
-                                  display: inline-block;
-                                  /* Allows padding and margin */
-                                  font-weight: bolder;
-                                }
+#auth-buttons button:hover {
+  background-color: #b34800;
+  /* Darker blue */
+}
 
-                                .auth-form-container {
-                                  display: flex;
-                                  flex-direction: column;
-                                  justify-content: center;
-                                  align-items: center;
-                                  max-width: 400px;
-                                  margin: 50px auto;
-                                  padding: 20px;
-                                  background: #fff;
-                                  border-radius: 5px;
-                                  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-                                }
-                
-                                .auth-form-container h2 {
-                                  text-align: center;
-                                  margin-bottom: 20px;
-                                }
-                
-                                .auth-form-container form {
-                                  display: flex;
-                                  flex-direction: column;
-                                  align-items: center;
-                                  width: 100%;
-                                  max-width: 400px;
-                                }
-                
-                                .auth-form-container label {
-                                  margin-bottom: 5px;
-                                }
-                
-                                .auth-form-container input[type="text"],
-                                .auth-form-container input[type="email"],
-                                .auth-form-container input[type="password"] {
-                                  padding: 10px 50px;
-                                  margin-bottom: 15px;
-                                  border: 1px solid #ddd;
-                                  border-radius: 4px;
-                                }
-                
-                                .auth-form-container button {
-                                  padding: 10px;
-                                  background: #007bff;
-                                  color: white;
-                                  border: none;
-                                  border-radius: 4px;
-                                  cursor: pointer;
-                                  margin-top: 10px;
-                                }
-                
-                                .auth-form-container button:hover {
-                                  background: #0056b3;
-                                }
-                
-                                .auth-form-container p {
-                                  text-align: center;
-                                  margin-top: 20px;
-                                }
-                
-                                .auth-form-container a {
-                                  color: #007bff;
-                                  text-decoration: none;
-                                }
-                
-                                .auth-form-container a:hover {
-                                  text-decoration: underline;
-                                }
+/* Welcome message styles */
+#welcome-message {
+  color: white;
+  margin-left: 10px;
+  /* Adjust as per layout */
+}
+
+#auth-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Add some margin if needed */
+  margin-right: auto;
+  /* This pushes the logo and burger to the right */
+}
+
+#auth-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Add some margin if needed */
+  margin-right: auto;
+  font-weight: bolder;
+  /* This pushes the logo and burger to the right */
+}
+#auth-buttons a {
+  text-decoration: none;
+  /* Removes the underline from links */
+  color: inherit;
+  /* Makes the link color the same as the button text color */
+  display: inline-block;
+  /* Allows padding and margin */
+  font-weight: bolder;
+}
+
+.auth-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.auth-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form-container label {
+  margin-bottom: 5px;
+}
+
+.auth-form-container input[type="text"],
+.auth-form-container input[type="email"],
+.auth-form-container input[type="password"] {
+  padding: 10px 50px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.auth-form-container button {
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.auth-form-container button:hover {
+  background: #0056b3;
+}
+
+.auth-form-container p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.auth-form-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.auth-form-container a:hover {
+  text-decoration: underline;
+}
+
+/* Remove underline from all anchor tags */
+a {
+  text-decoration: none;
+}
+
+/* Optionally, you can add styles for hover and visited states */
+a:hover {
+  text-decoration: none; /* Remove underline on hover */
+}
+
+a:visited {
+  text-decoration: none; /* Remove underline on visited links */
+}

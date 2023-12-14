@@ -95,7 +95,7 @@
         function displayResults(bmi, bodyType, workoutSuggestion) {
           var resultDiv = document.getElementById("result");
           resultDiv.innerHTML = `<p>Your BMI is: ${bmi}</p>
-                           <p>Your body type is: ${bodyType}</p>
+                           <p>Your body type is: <a href="diets-${bodyType}.html">${bodyType}</a></p>
                            <p>Suggested Workout: ${workoutSuggestion}</p>`;
           resultDiv.style.display = "block";
         }

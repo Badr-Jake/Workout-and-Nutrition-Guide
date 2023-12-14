@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout-WeightStrength</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    
+    <style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="scroll-message">Scroll Down</div>
+
+    <div class="explanation weight-strength-explanation">
+        <div class="day fade-in-section">Split 1</div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Monday</div>
+            <div class="exercise">Chest and Triceps</div>
+            <img src="https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2021/09/Chest-and-triceps-workout.jpg?fit=1844%2C1037&ssl=1" width="800px">
+        </div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Tuesday</div>
+            <div class="exercise">Rest</div>
+            <img src="https://images.squarespace-cdn.com/content/v1/54c15009e4b039d958fe4387/1544114755891-MKM2VJ4TC5E7VRMO9NSE/AdobeStock_134981981.jpeg?format=2500w" width="800px">
+        </div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Wednesday</div>
+            <div class="exercise">Back and Biceps</div>
+            <img src="https://cdn.mos.cms.futurecdn.net/ZfFyU3LMzRgyMiqwy5tW99.jpg" width="800px">
+        </div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Thursday</div>
+            <div class="exercise">Rest</div>
+            <img src="https://us.images.westend61.com/0001539513pw/woman-relaxing-on-chair-at-home-SBOF03430.jpg" width="800px">
+        </div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Friday</div>
+            <div class="exercise">Legs and Shoulders</div>
+            <img src="https://scarysymptoms.com/wp-content/uploads/2014/09/CAN-FEMUR-TO-SHIN-LENGTH-Squat-Woman-By-UfaBizPhoto--scaled-e1582973331163.jpg" width="800px">
+        </div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Saturday</div>
+            <div class="exercise">Rest</div>
+            <img src="https://manna.amazingfacts.org/amazingfacts/website/amazinghealthfacts/images/rest-mega.jpg" width="800px">
+        </div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Sunday</div>
+            <div class="exercise">Rest</div>
+            <img src="https://prod-ne-cdn-media.puregym.com/media/790815/sleep.jpg?quality=80&width=992" width="800px">
+        </div>
+  
+        <div class="day fade-in-section">Split 2</div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Monday</div>
+            <div class="exercise">Upper Body Heavy (Bench Press, Rows)</div>
+            <img src="https://steelsupplements.com/cdn/shop/articles/shutterstock_446059105_3744x.jpg?v=1602021894" width="800px">
+        </div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Tuesday</div>
+            <div class="exercise">Lower Body Heavy (Squats, Deadlifts)</div>
+            <img src="https://blogscdn.thehut.net/app/uploads/sites/478/2022/04/deadlift-variations-ft-min_1651238272.jpg" width="800px">
+        </div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Wednesday</div>
+            <div class="exercise">Rest</div>
+            <img src="https://m.economictimes.com/thumb/msid-68814808,width-1200,height-900,resizemode-4,imgsize-846949/rest.jpg" width="800px">
+        </div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Thursday</div>
+            <div class="exercise">Upper Body Moderate (Overhead Press, Pull-Ups)</div>
+            <img src="https://www.bodybuilding.com/images/2017/may/6-tips-for-improving-your-overhead-press-header-v2-960x540.jpg" width="800px">
+        </div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Friday</div>
+            <div class="exercise">Lower Body Moderate (Lunges, Leg Press)</div>
+            <img src="https://staticg.sportskeeda.com/editor/2023/07/487cb-16897577076046-1920.jpg?w=840" width="800px">
+        </div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Saturday</div>
+            <div class="exercise">Rest</div>
+            <img src="https://www.sleepscore.com/wp-content/uploads/2021/08/stress-image.jpeg" width="800px">
+        </div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="day-heading">Sunday</div>
+            <div class="exercise">Rest</div>
+            <img src="https://content.api.news/v3/images/bin/26ce136c6bcc516fea4e978deac4ea86" width="800px">
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+
+        // Trigger animation on scroll
+        $(window).on('scroll', function() {
+            $('.fade-in-section').each(function() {
+                var sectionTop = $(this).offset().top;
+                var scrollPos = $(window).scrollTop();
+                var windowHeight = $(window).height();
+
+                if (scrollPos + windowHeight > sectionTop) {
+                    $(this).addClass('visible');
+                }
+            });
+        });
+      });
+    </script>
+</body>
+</html>

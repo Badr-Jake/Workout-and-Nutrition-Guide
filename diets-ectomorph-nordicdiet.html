@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nordic Diet</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    
+    <style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="scroll-message">Scroll Down</div>
+
+    <div class="explanation hypertrophy-explanation">
+        <div class="day fade-in-section">Nordic Diet</div>
+  
+        <div class="day-detail fade-in-section">
+            <div class="exercise">Emphasizes high-quality, whole food ingredients and sustainability. It's high in good fats and carbohydrates, making it suitable for ectomorphs who need more calories for weight and muscle gain.</div>
+            <img src="https://www.houseofwellness.com.au/wp-content/uploads/2022/02/nordic-diet.jpg" width="800px">
+        </div>
+  
+        <div class="day fade-in-section">Example</div>
+        
+        <div class="day-detail fade-in-section">
+            <div class="exercise">
+                <li>Pickled herring with dark rye bread</li>
+                <li>Root vegetable stew with a side of barley</li>
+                <li>Smoked salmon with boiled potatoes</li>
+            </div>
+            <div class="example-images">
+                <img src="https://www.seriouseats.com/thmb/inhmtFRqZC3sXqMZVRTvGk-Zjkg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2014__12__20141201-smorrebrod-herring-vicky-wasik-3-9143da2af20547eebd3983d98b8a6726.jpg" height="400px">
+                <img src="https://www.twoofakindcooks.com/wp-content/uploads/2021/10/Root-Vegetable-and-Barley-Stew_close.png" height="400px">
+                <img src="https://i.guim.co.uk/img/media/5da93209bc172d93c7ee5e3a26391005f04a4bc6/0_1746_4912_2945/master/4912.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=a3d0ccf18163ea4aad10db6b1f36536e" height="400px">
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+
+        // Trigger animation on scroll
+        $(window).on('scroll', function() {
+            $('.fade-in-section').each(function() {
+                var sectionTop = $(this).offset().top;
+                var scrollPos = $(window).scrollTop();
+                var windowHeight = $(window).height();
+
+                if (scrollPos + windowHeight > sectionTop) {
+                    $(this).addClass('visible');
+                }
+            });
+        });
+      });
+    </script>
+</body>
+</html>
