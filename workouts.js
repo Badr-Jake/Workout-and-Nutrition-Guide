@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
   function showExplanation(index) {
     // Hide all explanations
     explanations.forEach((explanation) => {
-      explanation.style.display = 'none';
+      explanation.classList.remove('active');
     });
 
     // Show the selected explanation
-    explanations[index].style.display = 'block';
+    explanations[index].classList.add('active');
 
     // Get the current day
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
