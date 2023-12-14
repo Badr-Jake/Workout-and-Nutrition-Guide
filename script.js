@@ -86,44 +86,75 @@ function login() {
 
 // Add event listeners for login and sign up functionality
 document.addEventListener('DOMContentLoaded', function() {
-  // Add your event listeners here
+  document.getElementById('signup-form').addEventListener('submit', signUp);
+  // Add any other DOMContentLoaded-related code here
 });
 
 
 
 
 
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
 
 
-$(document).ready(function () {
-  // Set the initial visibility of all exercise lines to hidden
-  $('.exercise').hide();
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
-  // Function to check if an element is in the viewport
-  function isElementInViewport(el) {
-    var rect = el[0].getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-    );
-  }
 
-  // Function to handle scroll events
-  function handleScroll() {
-    // Loop through each exercise element
-    $('.exercise').each(function () {
-      // Check if the exercise element is in the viewport
-      if (isElementInViewport($(this))) {
-        // If it's in the viewport, show the element (you can add animation effects here)
-        $(this).show();
-      }
+
+const auth = firebase.auth();
+const database = firebase.database();
+
+// Sign up function
+function signUp(event) {
+  console.log('signUp function triggered'); // Check if function is triggered
+  event.preventDefault(); // This prevents the form from submitting the default way
+
+  const email = document.getElementById('signup-email').value;
+  const password = document.getElementById('signup-password').value;
+
+ 
+  
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      // You can save additional user info to the database here
+      database.ref('users/' + user.uid).set({
+        email: email
+        // other profile information
+        
+      });
+      // redirect to home page or somewhere else
+      console.log('SignUp complete');
+      window.location.href = 'index.html';
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // .. handle errors here
+      console.error(errorCode, errorMessage);
     });
-  }
+}
 
-  // Attach the handleScroll function to the scroll event
-  $(window).on('scroll', handleScroll);
-
-  // Trigger the handleScroll function on page load
-  handleScroll();
-});
+// Login function
+function login() {
+  const email = document.getElementById('login-username').value;
+  const password = document.getElementById('login-password').value;
+  
+  auth.signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // redirect or do something else
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // .. handle errors here
+      console.error(errorCode, errorMessage);
+    });
+}
